@@ -14,5 +14,8 @@ public class Main {
         federico.makePurchase(80);
         System.out.println(federico.returnBill()); // should output 260.0
         System.out.println(federico.discountReached()); // should output false
+        federico.makePurchase(30);
+        System.out.println(federico.returnBill()); // should output 260.0
+        System.out.println(federico.discountReached()); // should output false
     }
 }

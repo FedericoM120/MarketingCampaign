@@ -1,23 +1,22 @@
 public class Customer {
     private double purchases;
-    private int total;
+    private double total;
     private int discountTracker;
 
     public Customer() {
-    }
+    }                       //50+60 = 110 - 10 = 100 THEN 100 + 90 = 190 THEN 190 + 20 = 210 - 10 =200
 
     public void makePurchase(double amount) {
+        total += amount;
+        discountTracker += amount;
         if (discountReached()){
-            purchases = amount - 10;
-        } else {
-            purchases = amount;
+            total = total - 10;
         }
-        total += purchases;
-        discountTracker += purchases;
+
     }
 
     public boolean discountReached() {
-        if (total > 100) {
+        if (discountTracker > 100) {
             discountTracker = 0;
             return true;
         }
@@ -25,6 +24,7 @@ public class Customer {
     }
 
     public double returnBill() {
+
         return total;
     }
 }
